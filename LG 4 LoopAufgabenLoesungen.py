@@ -96,19 +96,21 @@ print("\nAufgabe 5\n")
 
 n = 1
 while n < 6:
-    for x in range(n):
-        print(x, end="")
+    for num in range(n):
+        print(num, end="")
     n += 1
     print()
 
 # Variante 2
 
 cnt = 0
-liste_triangle = [1,2,3,4,5]
-
+liste_triangle = [0,1,2,3,4]
+#print(liste_triangle[:cnt+3:])
 while cnt < len(liste_triangle):
     print(*liste_triangle[:cnt+1:])
     cnt+=1
+
+print(*liste_triangle)
 
 
 # Aufgabe 6: Erzeuge folgende Ausgabe mit einem Loop:
@@ -129,7 +131,7 @@ Tipp: Eine andere Darstellung könnte sein:
 
 print("\nAufgabe 6\n")
 
-hoehe = 5
+hoehe = 7
 for i in range(hoehe):
     # Leerzeichen vor den Sternen
     leerzeichen = ' ' * (hoehe - i - 1)
@@ -149,5 +151,15 @@ print("\nAufgabe 7\n")
 buchstaben = list(range(65, 91)) + list(range(97, 123))
 for b in buchstaben:
     print(chr(b), end="")
+
+
+buchstaben_liste = []
+for zahl in range (65, 123):
+    if 91 <= zahl <= 96:
+        continue
+    buchstabe = chr(zahl)
+    buchstaben_liste.append(buchstabe)
+print(buchstaben_liste)
+ 
 
 

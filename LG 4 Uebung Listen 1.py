@@ -36,6 +36,24 @@ else:
 
 eingangsliste = [52, 4, 61, 67, 3]
 ausgangsliste = [68, 44, 52, 92, 11, 4, 61, 69, 67, 3]
+print(id(eingangsliste))
+
+eingangsliste = ausgangsliste.copy()
+print(eingangsliste)
+
+ausgangsliste[0] = 100
+
+print(eingangsliste)
+print(id(eingangsliste))
+print(id(ausgangsliste))
+
+a = 10
+print(id(a))
+b = a
+print(id(b))
+a = 11
+print(id(a))
+print(b)
 
 # Füge hier eine Reihe von pop-Methodenaufrufen ein:
 # eingangsliste.insert(0, 68)
