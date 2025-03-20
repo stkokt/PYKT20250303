@@ -20,7 +20,12 @@ print("\nAufgabe 1b\n")
 print(big_list[65:]) # oder big_list[len(big_list)-15:]
 
 print("\nAufgabe 1c\n")
-print(big_list[20:61]) # oder big_list[20:len(big_list)-19]
+print(big_list[20:60]) # oder big_list[20:len(big_list)-20]
+
+# Alternative Ruth
+auswahl = big_list [len(big_list)//2 - len(big_list)//4 : \
+                    len(big_list)//2 + len(big_list)//4]
+print(auswahl)
 
 print("\nAufgabe 1d\n")
 print(big_list[80:39:-1]) # oder big_list[len(big_list):len(big_list)//2-1:-1]
@@ -55,8 +60,9 @@ for x in range(len(liste1)):
 
 # Aufgabe 3b: Slice die Liste1 in einem Loop durch Verschieben
 #             des Stop- Parameters so, dass die Summe der restlichen
-#             Liste größer 100 ist. Der Loop soll dann abgebrochen und die 
-#             gekürzte Liste ausgegeben werden.
+#             Liste den Wert 100 gerade überschritten hat. 
+#             Der Loop soll dann abgebrochen und die gekürzte 
+#             Liste ausgegeben werden.
 
 # >            (>100)            <
 #  |start| | | | | | | | | | |<-x|
