@@ -101,6 +101,14 @@ while n < 6:
     n += 1
     print()
 
+# Variante 2
+
+cnt = 0
+liste_triangle = [1,2,3,4,5]
+
+while cnt < len(liste_triangle):
+    print(*liste_triangle[:cnt+1:])
+    cnt+=1
 
 
 # Aufgabe 6: Erzeuge folgende Ausgabe mit einem Loop:
@@ -141,4 +149,5 @@ print("\nAufgabe 7\n")
 buchstaben = list(range(65, 91)) + list(range(97, 123))
 for b in buchstaben:
     print(chr(b), end="")
+
 
