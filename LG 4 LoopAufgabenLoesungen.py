@@ -148,10 +148,14 @@ for i in range(hoehe):
 
 print("\nAufgabe 7\n")
 
+import time
+
+print(time.time())
 buchstaben = list(range(65, 91)) + list(range(97, 123))
 for b in buchstaben:
     print(chr(b), end="")
-
+# 0,001393
+print(time.time())
 
 buchstaben_liste = []
 for zahl in range (65, 123):
@@ -160,6 +164,8 @@ for zahl in range (65, 123):
     buchstabe = chr(zahl)
     buchstaben_liste.append(buchstabe)
 print(buchstaben_liste)
+#0.000065
+print(time.time())
  
 
 

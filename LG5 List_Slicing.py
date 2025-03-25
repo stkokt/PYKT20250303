@@ -40,6 +40,9 @@ print("\nAufgabe 2\n")
 liste_sorted = liste[4::-1] + liste[9:4:-1]
 print(liste_sorted)
 
+# print(sorted(liste))
+# liste.sort()
+
 liste1 = [1,2,3,5,6,7,5,12,50,4,5,60]
 
 # Aufgabe 3a: Slice die Liste1 in einem Loop durch Verschieben
@@ -51,7 +54,7 @@ liste1 = [1,2,3,5,6,7,5,12,50,4,5,60]
 #  |x ->| | | | | | | | | | |stop|
 
 print("\nAufgabe 3a\n")
-
+#              0,1,2,3,...,11
 for x in range(len(liste1)):
     if sum(liste1[x:])<100:
         print(liste1[x:])
@@ -68,10 +71,25 @@ for x in range(len(liste1)):
 #  |start| | | | | | | | | | |<-x|
 
 print("\nAufgabe 3b\n")
-
+#                   11,10,9,...,2,1
 for x in reversed(range(len(liste1))):
     if sum(liste1[:x])<100:
         print(liste1[:x+1])
+        break
+
+# Meine Idee  - funktioniert, aber verschiebt stop von vorne nach hinten. Sollte aber von hinten nach vorne gehen
+# TODO: stop von hinten nach vorne verschieben 
+for index, zahl in enumerate(liste1):
+    start = 0 # bleibt gleich. Hätte es auch weglassen können und nur ":"" schreiben
+    stop = len(liste1) - index 
+    print(index)
+    gekuerzte_liste = liste1[start:stop]
+    summe = sum(gekuerzte_liste) # alternativ ginge hier auch: summe += liste1[index], wenn über dem Loop: summe=liste1[0]
+    print(gekuerzte_liste)
+    print(f"Summe: {summe}")
+    if summe > 100:
+        print (f"Summe des Anfangs der Liste ist größer als 100 bei Zahl: {liste1[index]} auf Index: {index}")
+        print(f"Gekürzte Liste: {gekuerzte_liste}")
         break
 
 # Aufgabe 3c: Slice die Liste1 in einem Loop durch Verschieben
@@ -83,8 +101,19 @@ for x in reversed(range(len(liste1))):
 #  |x->| | | | | | | | | | |<-x|
 
 print("\nAufgabe 3c\n")
-
+# liste1 = [1,2,3,5,6,7,5,12,50,4,5,60]
+# 0,1,2,3,4,5,6,7,8,9,10,11
 for x in range(len(liste1)):
     if sum(liste1[x:len(liste1)-x])<100:
         print(liste1[x:len(liste1)-x])
         break
+print("\nIris\n")
+
+for idx, n in enumerate(liste1):       # start, stop, step 
+    print(liste1[idx:len(liste1)-idx])
+    summe_liste = sum(liste1[idx:len(liste1)-idx])
+    print(f"liste2: {summe_liste}")     
+    if summe_liste  < 100 :
+         break
+    
+print(f"liste2_fin: {summe_liste}")
