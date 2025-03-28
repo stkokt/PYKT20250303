@@ -71,7 +71,7 @@ print(one_or_zero)  # [1, 0, 0, 0, 1, 0, 1, 0, 0, 1]
 print("\nAufgabe 7\n")
 
 words = ["apple", "banana", "cherry"]
-words_with_a = [word for word in words if 'a' in word]
+words_with_a = [word for word in words if 'a' in word.lower()]
 print(words_with_a) # ['apple', 'banana']
 
 # Aufgabe 8: Die Liste words_gt_5 soll die Worte aus words
@@ -89,7 +89,8 @@ print(words_gt_5)   # ['banana', 'cherry']
         
 print("\nAufgabe 9\n")
 
-vok_kon = [[len([char for char in word if char in "aeiou"]), len([char for char in word if char not in "aeiou"])] for word in words]
+vok_kon = [[len([char for char in word if char in "aeiou"]), \
+            len([char for char in word if char.isalpha() and char not in "aeiou"])] for word in words]
 print(vok_kon)      # [[2, 3], [3, 3], [1, 5]]
 
 # Aufgabe 10: Die Liste schmidts_idx soll die Indizes all der Namen in namen
@@ -112,13 +113,16 @@ print(schmidts) # ['Max Schmidt', 'Tom Schmidt', 'Jonas Schmidt', 'Leo Schmidt',
 # Aufgabe 12: Spiele Lotto (6 aus 49)! Simuliere die Ziehungen und wahlweise auch
 #             den Tippschein mit einer geeigneten Methode aus dem random- Modul.
 
-import random
+# import random
+from random import sample
 
 print("\nAufgabe 12\n")
 
+
+
 lostrommel = [n for n in range(1,50)]   # Liste 1 - 49
 tippschein = [3,20,46,7,33,15]          # fester Tippschein
-ziehung = random.sample(lostrommel, 6)  # Simulierte Ziehung
+ziehung = sample(lostrommel, 6)  # Simulierte Ziehung
 
 treffer_cnt = 0   # Zählt hoch, wenn eine Zahl des Tippscheins auch in der Ziehung ist.
 
@@ -144,9 +148,10 @@ cnt4er = 0
 cnt5er = 0
 cnt6er = 0
 
+
 for ziehungen in range(5_000_000):  # 1_000_000 Ziehungen, wir wollen mal nicht übertreiben ;)
     treffer_cnt = 0                 # Treffercounter wird bei jedem Loop zurückgesetzt.
-    ziehung = random.sample(lostrommel, 6)  # Zufalls- Sample aus 1 - 49
+    ziehung = sample(lostrommel, 6)  # Zufalls- Sample aus 1 - 49
     for lottozahl in ziehung:       # Vergleich mit Tippschein
         if lottozahl in tippschein:
             treffer_cnt += 1
