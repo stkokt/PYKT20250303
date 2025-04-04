@@ -67,6 +67,7 @@ zumTesten4 = {
 def avgGrades(grades:dict):
     class_notes = {}
     for student, notes in grades.items():
+        print(grades.items())
         print(f"Der Notendurchschnitt von {student} ist {round(sum(notes.values())/len(notes.values()),1)}.")
     for topic in grades.values():         
         class_notes.update(topic)
