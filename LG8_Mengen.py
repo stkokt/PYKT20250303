@@ -123,6 +123,7 @@ print(C == A.symmetric_difference(B))
 # A\B = C\B (für C=AΔB) 
 # A∩B = B\C (für C=AΔB)
 A = (C.difference(B)).union(B.difference(C))
+# A = C.symmetric_difference(B)
 print(A)
 print(C == A.symmetric_difference(B))
 # Lösung: Ende
@@ -142,7 +143,7 @@ def potenzmenge_iterativ(menge: frozenset[int]) -> frozenset[frozenset[int]]:
     for menge in potenzmengenliste:
         for element in menge:
             potenzmengenliste.append(frozenset(menge) - {element})
-
+    # print(potenzmengenliste) # Einkommentieren, um die jeweilig gebildeten Mengen zu sehen.
     return frozenset(potenzmengenliste)
 
 A = frozenset({1,2,3})
