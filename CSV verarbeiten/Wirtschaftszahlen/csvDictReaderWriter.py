@@ -18,7 +18,7 @@ with open('Erwerbstaetige1.csv', mode='r', newline='') as file:
     csv_dict_reader = csv.DictReader(file, delimiter=";")
     dataErwerb = list(csv_dict_reader)
 
-#print(dataErwerb)
+print(dataErwerb)
 
 jahre = [ds['Jahr'] for ds in dataErwerb]
 #print(jahre)
